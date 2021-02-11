@@ -1,0 +1,125 @@
+"""This has console machine as a baremetal node and contains 10 xen-vms for MZ Cluster (1 mzmaster and 9 mzworkers) and 2 xen-vms in the DMZ Cluster (1 dmzmaster and 1 dmzworker0)"""
+
+# Import the Portal object.
+import geni.portal as portal
+# Import the ProtoGENI library.
+import geni.rspec.pg as pg
+# Import the Emulab specific extensions.
+import geni.rspec.emulab as emulab
+
+# Create a portal object,
+pc = portal.Context()
+
+# Create a Request object to start building the RSpec.
+request = pc.makeRequestRSpec()
+
+# Node console
+node_console = request.RawPC('console')
+node_console.cores = 4
+node_console.ram = 8192
+node_console.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface0 = node_console.addInterface('interface-0')
+
+# Node mzmaster
+node_mzmaster = request.XenVM('mzmaster')
+node_mzmaster.cores = 4
+node_mzmaster.ram = 8192
+node_mzmaster.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface1 = node_mzmaster.addInterface('interface-1')
+
+# Node mzworker0
+node_mzworker0 = request.XenVM('mzworker0')
+node_mzworker0.cores = 4
+node_mzworker0.ram = 16384
+node_mzworker0.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface2 = node_mzworker0.addInterface('interface-2')
+
+# Node mzworker1
+node_mzworker1 = request.XenVM('mzworker1')
+node_mzworker1.cores = 4
+node_mzworker1.ram = 16384
+node_mzworker1.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface3 = node_mzworker1.addInterface('interface-3')
+
+# Node mzworker2
+node_mzworker2 = request.XenVM('mzworker2')
+node_mzworker2.cores = 4
+node_mzworker2.ram = 16384
+node_mzworker2.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface4 = node_mzworker2.addInterface('interface-4')
+
+# Node mzworker3
+node_mzworker3 = request.XenVM('mzworker3')
+node_mzworker3.cores = 4
+node_mzworker3.ram = 16384
+node_mzworker3.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface5 = node_mzworker3.addInterface('interface-5')
+
+# Node mzworker4
+node_mzworker4 = request.XenVM('mzworker4')
+node_mzworker4.cores = 4
+node_mzworker4.ram = 16384
+node_mzworker4.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface6 = node_mzworker4.addInterface('interface-6')
+
+# Node mzworker5
+node_mzworker5 = request.XenVM('mzworker5')
+node_mzworker5.cores = 4
+node_mzworker5.ram = 16384
+node_mzworker5.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface7 = node_mzworker5.addInterface('interface-9')
+
+# Node mzworker6
+node_mzworker6 = request.XenVM('mzworker6')
+node_mzworker6.cores = 4
+node_mzworker6.ram = 16384
+node_mzworker6.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface8 = node_mzworker6.addInterface('interface-8')
+
+# Node mzworker7
+node_mzworker7 = request.XenVM('mzworker7')
+node_mzworker7.cores = 4
+node_mzworker7.ram = 16384
+node_mzworker7.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface12 = node_mzworker7.addInterface('interface-12')
+
+# Node dmzmaster
+node_dmzmaster = request.XenVM('dmzmaster')
+node_dmzmaster.cores = 4
+node_dmzmaster.ram = 8192
+node_dmzmaster.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface9 = node_dmzmaster.addInterface('interface-11')
+
+# Node dmzworker0
+node_dmzworker0 = request.XenVM('dmzworker0')
+node_dmzworker0.cores = 4
+node_dmzworker0.ram = 16384
+node_dmzworker0.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface10 = node_dmzworker0.addInterface('interface-10')
+
+# Node mzworker8
+node_mzworker8 = request.XenVM('mzworker8')
+node_mzworker8.cores = 4
+node_mzworker8.ram = 16384
+node_mzworker8.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//CENTOS7-64-STD'
+iface11 = node_mzworker8.addInterface('interface-7')
+
+# Link link-0
+link_0 = request.Link('link-0')
+link_0.Site('undefined')
+link_0.addInterface(iface0)
+link_0.addInterface(iface1)
+link_0.addInterface(iface2)
+link_0.addInterface(iface3)
+link_0.addInterface(iface4)
+link_0.addInterface(iface5)
+link_0.addInterface(iface6)
+link_0.addInterface(iface11)
+link_0.addInterface(iface8)
+link_0.addInterface(iface7)
+link_0.addInterface(iface10)
+link_0.addInterface(iface9)
+link_0.addInterface(iface12)
+
+# Print the generated rspec
+pc.printRequestRSpec(request)
