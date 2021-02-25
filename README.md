@@ -1,2 +1,2 @@
 # MOSIP-Setup-Instructions
-Instructions for setting up MOSIP on private infrastracture
+Instructions from CMU MOSIP team on setting up MOSIP on private infrastracture
