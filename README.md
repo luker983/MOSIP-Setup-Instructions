@@ -26,6 +26,8 @@ Most of these instructions are taken from [MOSIP Sandbox Installer](https://docs
 
 **Note:** May need to run `source ~/.bashrc` to get the alias `an`. 
 
+At this point MOSIP will start installing and take a very long time. Some installation issues can be resolved by simply re-running `an site.yml`.
+
 ## Troubleshooting
 
 If you get the following error:
