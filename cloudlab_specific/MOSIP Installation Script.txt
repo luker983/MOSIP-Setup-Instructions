@@ -69,7 +69,9 @@ sudo yum install -y ansible
 sudo yum install -y git
 git clone https://github.com/mosip/mosip-infra.git
 sudo chown -R mosipuser mosip-infra/
-
+cd mosip-infra
+git checkout 1.1.2
+cd ..
 
 ## Changing MOSIP naming convention
 sudo sed -i "s/.*cluster_master:.*/cluster_master: 'mzmaster'/" mosip-infra/deployment/sandbox-v2/group_vars/mzcluster.yml

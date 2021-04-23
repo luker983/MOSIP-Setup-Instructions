@@ -6,12 +6,7 @@ Most of these instructions are taken from [MOSIP Sandbox Installer](https://docs
 
 2. Enable SELinux permissive mode on the console machine and reboot. [Instructions here](https://phoenixnap.com/kb/enable-selinux-centos)
 
-3. Upload [installation script](https://github.com/fretbuzz/MOSIP-Setup-Instructions/blob/main/cloudlab_specific/MOSIP%20Installation%20Script.txt) to the console machine. At line 72, add the following to checkout the correct version of MOSIP:
-```
-cd mosip-infra 
-git checkout 1.1.2
-cd ..
-```
+3. Upload [installation script](/cloudlab_specific/MOSIP%20Installation%20Script.txt) to the console machine.
 
 4. Follow instructions at top of script and run. It will probably throw a few errors, don’t worry about it yet.
 
