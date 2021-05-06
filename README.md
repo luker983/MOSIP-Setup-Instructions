@@ -22,7 +22,7 @@ Most of these instructions are taken from [MOSIP Sandbox Installer](https://docs
 
 10. In `roles/k8scluster/kubernetes/node/meta/main.yml` *and* `roles/k8scluster/kubernetes/master/meta/main.yml`, replace package names with `packagename-1.19.0`. For instance, `kubeadm` becomes `kubeadm-1.19.0`. 
 
-11. As `mosipuser`, run `an site.yml` in `/home/mosipuser/mosip-infra/deployment/sandbox-v2`. 
+11. As `mosipuser`, run `an site.yml` in `/home/mosipuser/mosip-infra/deployment/sandbox-v2` with password `foo`. 
 
 **Note:** May need to run `source ~/.bashrc` to get the alias `an`. 
 
