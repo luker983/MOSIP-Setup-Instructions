@@ -30,6 +30,7 @@ At this point MOSIP will start installing and take a very long time. Some instal
 
 ## Troubleshooting
 
+### pip
 If you get the following error:
 ```
 TASK [packages/crypto : Install python3 cryptography]
@@ -42,3 +43,13 @@ Run:
 * `deactivate` 
 
 You may need to install more packages in this virtual environment, but the errors should tell you what is needed.
+
+### dns
+
+If you get 503 errors on the admin interface, this might be why. 
+
+For whatever reason, DNS worked on the first instance I stood up, but not on the second. I ended up changing all of the hostnames in `hosts.ini` back to `console.sb`, `mzmaster.sb`, ... with the `.sb` extension and things worked again. Once you make the changes, run `an playbooks/coredns.yml` to update the configuration. 
+
+### permissions
+
+May need to run `sudo chown -R mosipuser mosip-infra/` to update the permissions on the new branch. 
