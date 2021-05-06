@@ -20,7 +20,7 @@ Most of these instructions are taken from [MOSIP Sandbox Installer](https://docs
 
 9. In `roles/packages/helm-cli/tasks/main.yml`, replace `https://kubernetes-charts.storage.googleapis.com` with `https://charts.helm.sh/stable` ([Source](https://stackoverflow.com/a/65404574/15117449))
 
-10. In `roles/k8scluseter/kubernetes/node/meta/main.yml` *and* `roles/k8scluster/kubernets/master/meta/main.yml`, replace package names with `packagename-1.19.0`. For instance, `kubeadm` becomes `kubeadm-1.19.0`. 
+10. In `roles/k8scluster/kubernetes/node/meta/main.yml` *and* `roles/k8scluster/kubernets/master/meta/main.yml`, replace package names with `packagename-1.19.0`. For instance, `kubeadm` becomes `kubeadm-1.19.0`. 
 
 11. As `mosipuser`, run `an site.yml` in `/home/mosipuser/mosip-infra/deployment/sandbox-v2`. 
 
