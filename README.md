@@ -53,3 +53,9 @@ For whatever reason, DNS worked on the first instance I stood up, but not on the
 ### permissions
 
 May need to run `sudo chown -R mosipuser mosip-infra/` to update the permissions on the new branch. 
+
+### admin
+
+The docker image version for the admin playbook is incorrect. Thanks to another team for this fix!
+
+Find the relevant docker images in `versions.yml`, replace `1.1.3` with `1.1.2`. 
